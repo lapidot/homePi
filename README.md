@@ -33,6 +33,10 @@ sudo geany /etc/ssmtp/ssmtp.conf
 
 
 
+install apache
+sudo apt update
+sudo apt install apache2 -y
+
 
 
 
