@@ -50,7 +50,35 @@ Activate LEDs for backlight - for returning from home at night? for automatic br
 
 
 
+Connect to WiFi network using SSH
+https://www.ev3dev.org/docs/tutorials/setting-up-wifi-using-the-command-line/
+robot@ev3dev:~$ connmanctl
+Error getting VPN connections: The name net.connman.vpn was not provided by any
+connmanctl> enable wifi
+Enabled wifi
+connmanctl> scan wifi
+Scan completed for wifi
+connmanctl> services
+*AO Wired                ethernet_b827ebbde13c_cable
+                         wifi_e8de27077de3_hidden_managed_none
+    AH04044914           wifi_e8de27077de3_41483034303434393134_managed_psk
+    Frissie              wifi_e8de27077de3_46726973736965_managed_psk
+    ruijgt gast          wifi_e8de27077de3_7275696a67742067617374_managed_psk
+    schuur               wifi_e8de27077de3_736368757572_managed_psk
+connmanctl> agent on
+Agent registered
+connmanctl> connect wifi_e8de27077de3_41      # You can use the TAB key at this point to autocomplete the name
+connmanctl> connect wifi_e8de27077de3_41483034303434393134_managed_psk
+Agent RequestInput wifi_e8de27077de3_41483034303434393134_managed_psk
+  Passphrase = [ Type=psk, Requirement=mandatory ]
+Passphrase? *************
+Connected wifi_e8de27077de3_41483034303434393134_managed_psk
+connmanctl> quit
 
 
 
 
+
+Simple Python Script To Control XBMC via Web/JSON API
+
+https://forum.kodi.tv/showthread.php?tid=197645
