@@ -82,3 +82,16 @@ connmanctl> quit
 Simple Python Script To Control XBMC via Web/JSON API
 
 https://forum.kodi.tv/showthread.php?tid=197645
+
+ip = 'localhost'
+port = '8080'
+username = 'KodiUserName'
+password = 'KodiPassword'
+
+
+Action	    Method	          Prarmeters
+Shutdown	  System.Shutdown	  {}
+Previous	  Player.GoTo	      {"playerid":0,"to":"previous"}
+Next	      Player.GoTo	      {"playerid":0,"to":"next"}
+Party Mode	Player.Open	      {"item":{"partymode":"music"}}
+Play/Pause	Player.PlayPause	{ "playerid":0}
