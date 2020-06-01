@@ -109,8 +109,9 @@ for RPi.GPIO to work in the scipt we need to install it. This cannot be done ove
 
 1. from Kodi UI, install libreElec addons -> program addons -> Raspberry Pi Tools 
 
-2. a file named config.txt exists on the microSD card, but wasn't accessible over SSH. I took it out and found it in the root directory. Add these lines to the config.txt file: 
-Uncomment this to enable the lirc-rpi module
+2. A file named config.txt exists on the /boot folder. It was on a different partition on the microSD card, that wasn't accessible over SSH. I took it out and read it on a computer. Found the file in the root directory.
+Add these lines to the config.txt file: 
+
 dtoverlay=lirc-rpi
 dtparam=gpio_in_pull=up
 
@@ -120,6 +121,16 @@ https://filter-failure.eu/2015/11/raspberry-pi-2-lirc-with-an-active-low-ir-rece
 3. make sure these lines are added to the top of the python script file (these were not needed when testing on a non-openelec debian distro):
 import sys
 sys.path.append('/storage/.kodi/addons/virtual.rpi-tools/lib')
+
+#Run on startup
+create the file (touch, or just use nano)
+/storage/.config/autostart.sh
+then make it an executable:
+chmod +x /storage/.config/autostart.sh
+
+(
+  python /downloads/ir.sys
+)&
 
 
 
