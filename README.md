@@ -98,6 +98,24 @@ Play/Pause	Player.PlayPause	{ "playerid":0}
 
 entire script added to code - read iR codes from remote, make a call to JSON-RPC on localhost
 
+this thread gave me a lot of info on making the GPIO work:
+https://forum.libreelec.tv/thread/1754-problem-installing-pi-tools-addon/
+
 
 for RPi.GPIO to work in the scipt we need to install it. This cannot be done over shell (ssh) as apt-get pip etc. don't work on LibreElec
-from Kodi UI, install libreElec addons -> program addons -> Raspberry Pi Tools 
+1. from Kodi UI, install libreElec addons -> program addons -> Raspberry Pi Tools 
+2. a file named config.txt exists on the microSD card, but wasn't accessible over SSH. I took it out and found it in the root directory. Add these lines to the config.txt file: 
+# Uncomment this to enable the lirc-rpi module
+dtoverlay=lirc-rpi
+dtparam=gpio_in_pull=up
+
+source:
+https://filter-failure.eu/2015/11/raspberry-pi-2-lirc-with-an-active-low-ir-receiver-with-raspbian-jessie/
+
+
+
+
+
+3. make sure these lines are added to the top of the python script file (these were not needed when testing on a non-openelec debian distro):
+import sys
+sys.path.append('/storage/.kodi/addons/virtual.rpi-tools/lib')
