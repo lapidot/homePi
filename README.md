@@ -95,3 +95,9 @@ Previous	  Player.GoTo	      {"playerid":0,"to":"previous"}
 Next	      Player.GoTo	      {"playerid":0,"to":"next"}
 Party Mode	Player.Open	      {"item":{"partymode":"music"}}
 Play/Pause	Player.PlayPause	{ "playerid":0}
+
+entire script added to code - read iR codes from remote, make a call to JSON-RPC on localhost
+
+
+for RPi.GPIO to work in the scipt we need to install it. This cannot be done over shell (ssh) as apt-get pip etc. don't work on LibreElec
+from Kodi UI, install libreElec addons -> program addons -> Raspberry Pi Tools 
