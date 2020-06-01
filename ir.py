@@ -41,11 +41,11 @@ PLAYPREV = 3
 PARTYMODE = 4
 SHUTDOWN = 5
 commands=[None]*6
-commands[PLAYPAUSE] ="0x322dda857L"#sony/hot:0x30c0c4eb1L" #PLAY
-commands[PLAYNEXT]= "0x322ddc837L"#sony/hot:0x30c0cc837L #LEFT
-commands[PLAYPREV]= "0x322dd9867L"#sony/hot:0x30c0c48b7L #RIGHT
-commands[PARTYMODE]="0x302fd708fL"#bose input button on philips remote/hot:0x30c0c48b7L #FAV
-commands[SHUTDOWN]= "0x340bf522dL"#sony/hot:0x30c0ca857L #RED
+commands[PLAYPAUSE] ="0x30c0c4eb1L" #PLAY
+commands[PLAYNEXT]= "0x30c0c2ed1L" #RIGHT
+commands[PLAYPREV]= "0x30c0c8e71L" #LEFT
+commands[PARTYMODE]="0x30c0c0cf3L" #FAV
+commands[SHUTDOWN]= "0x30c0ca857L" #RED
 
 JSONmethods=[None]*6
 JSONmethods[PLAYPAUSE]=	'Player.PlayPause'
@@ -55,11 +55,11 @@ JSONmethods[PARTYMODE]=	'Player.Open'
 JSONmethods[SHUTDOWN]= 	'System.Shutdown'
 
 JSONparameters=[None]*6
-JSONparameters[PLAYPAUSE]={}
-JSONparameters[PLAYNEXT]= {"playerid":0,"to":"previous"}#LEFT
-JSONparameters[PLAYPREV]=  {"playerid":0,"to":"next"}#RIGHT
+JSONparameters[SHUTDOWN]={}
+JSONparameters[PLAYNEXT]= {"playerid":0,"to":"next"}#RIGHT
+JSONparameters[PLAYPREV]=  {"playerid":0,"to":"previous"}#LEFT
 JSONparameters[PARTYMODE]= {"item":{"partymode":"music"}}#FAV
-JSONparameters[SHUTDOWN]= {"playerid":0} #RED
+JSONparameters[PLAYPAUSE]= {"playerid":0} #RED
 
 
 
