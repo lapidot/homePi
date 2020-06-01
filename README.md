@@ -133,6 +133,10 @@ chmod +x /storage/.config/autostart.sh
   python /downloads/ir.sys
 )&
 
+# Get files over SSH
+sudo sftp LibreELEC.018.co.il
+lcd Downloads/
+get ir.py
 
 
 # Untested - Rurn wifi on/off (bash script)
