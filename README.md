@@ -50,7 +50,7 @@ Activate LEDs for backlight - for returning from home at night? for automatic br
 
 
 
-#Connect to WiFi network using CLI (SSH)
+# Connect to WiFi network using CLI (SSH)
 https://www.ev3dev.org/docs/tutorials/setting-up-wifi-using-the-command-line/
 robot@ev3dev:~$ connmanctl
 Error getting VPN connections: The name net.connman.vpn was not provided by any
@@ -79,7 +79,7 @@ connmanctl> quit
 
 
 
-Simple Python Script To Control XBMC via Web/JSON API
+# Parameters for Python Script To Control XBMC via Web/JSON API
 
 https://forum.kodi.tv/showthread.php?tid=197645
 
@@ -100,7 +100,7 @@ entire script added to code - read iR codes from remote, make a call to JSON-RPC
 
 
 
-#GPIO on LibreElec
+# GPIO on LibreElec
 this thread gave me a lot of info on making the GPIO work:
 https://forum.libreelec.tv/thread/1754-problem-installing-pi-tools-addon/
 
@@ -122,7 +122,8 @@ https://filter-failure.eu/2015/11/raspberry-pi-2-lirc-with-an-active-low-ir-rece
 import sys
 sys.path.append('/storage/.kodi/addons/virtual.rpi-tools/lib')
 
-#Run on startup
+# Run on startup
+https://forum.kodi.tv/showthread.php?tid=247988
 create the file (touch, or just use nano)
 /storage/.config/autostart.sh
 then make it an executable:
@@ -134,10 +135,10 @@ chmod +x /storage/.config/autostart.sh
 
 
 
-#Untested - Rurn wifi on/off (bash script)
+# Untested - Rurn wifi on/off (bash script)
 https://www.linuxquestions.org/questions/linux-wireless-networking-41/script-to-turn-wifi-on-off-4175564405/
 
-#Untested - Run bash script from python (not checked if possible on LibreElec)
+# Untested - Run bash script from python (not checked if possible on LibreElec)
 https://python-forum.io/Thread-Enable-Disable-Wireless-connection-by-using-python
 import subprocess
 result = subprocess.run(["netsh", "interface", "set", "interface", "Wi-Fi", "DISABLED"])
