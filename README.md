@@ -111,18 +111,23 @@ for RPi.GPIO to work in the scipt we need to install it. This cannot be done ove
 
 2. A file named config.txt exists on the /boot folder.
 Either edit it directly on the sd (using a different computer) or mount the /flash partition:
+  
   mount -o remount,rw /flash
+  
   nano /flash/config.txt
+  
+  
 
 It was on a different partition on the microSD card, that wasn't accessible over SSH. I took it out and read it on a computer. Found the file in the root directory.
 Add these lines to the config.txt file: 
 
 dtoverlay=lirc-rpi
+
 dtparam=gpio_in_pull=up
 
 //also suggested to add the pin used:
 https://forum.libreelec.tv/thread/12262-enabling-gpio-pins/
-dtoverlay=gpio-ir,gpio_pin=5
+dtoverlay=gpio-ir,gpio_pin=11
 
 source:
 https://filter-failure.eu/2015/11/raspberry-pi-2-lirc-with-an-active-low-ir-receiver-with-raspbian-jessie/
@@ -132,8 +137,7 @@ import sys
 sys.path.append('/storage/.kodi/addons/virtual.rpi-tools/lib')
 
 path might be different:
-~/.kodi/addons/python.RPi.GPIO
-
+sys.path.append('/storage/.kodi/addons/python.RPi.GPIO/lib')
 
 # Run on startup
 https://forum.kodi.tv/showthread.php?tid=247988
