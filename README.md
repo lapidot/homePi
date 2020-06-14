@@ -164,3 +164,9 @@ https://python-forum.io/Thread-Enable-Disable-Wireless-connection-by-using-pytho
 import subprocess
 result = subprocess.run(["netsh", "interface", "set", "interface", "Wi-Fi", "DISABLED"])
 print("FAILED..." if result.returncode else "SUCCESS!")
+
+
+
+#Rpi Serial communication via GPIO
+https://www.in structables.com/id/Read-and-write-from-serial-port-with-Raspberry-Pi/
+(will require decoupler - arduino 3v, pi 5v)
