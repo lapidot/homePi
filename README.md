@@ -170,3 +170,12 @@ print("FAILED..." if result.returncode else "SUCCESS!")
 #Rpi Serial communication via GPIO
 https://www.in structables.com/id/Read-and-write-from-serial-port-with-Raspberry-Pi/
 (will require decoupler - arduino 3v, pi 5v)
+
+
+
+# Arduino for IR instead of Pi
+Arduino will read from IR or buttons, will be connected over serial to Pi
+Pi will read from serial and make the same JSON calls
+
+https://github.com/z3t0/Arduino-IRremote
+
