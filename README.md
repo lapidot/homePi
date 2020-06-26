@@ -179,3 +179,9 @@ Pi will read from serial and make the same JSON calls
 
 https://github.com/z3t0/Arduino-IRremote
 
+
+# expand RPi root partition to full SD card size
+http://cagewebdev.com/raspberry-pi-expanding-the-root-partition-of-the-sd-card/
+
+
+# install MPD Headless/commad line music player and MP
