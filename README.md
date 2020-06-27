@@ -185,3 +185,7 @@ http://cagewebdev.com/raspberry-pi-expanding-the-root-partition-of-the-sd-card/
 
 
 # install MPD Headless/commad line music player and MP
+
+
+# thingspeak account
+https://thingspeak.com/channels/1088622/private_show
