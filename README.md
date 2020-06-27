@@ -189,3 +189,11 @@ http://cagewebdev.com/raspberry-pi-expanding-the-root-partition-of-the-sd-card/
 
 # thingspeak account
 https://thingspeak.com/channels/1088622/private_show
+
+
+# automaticaly mount usb drives
+sudo apt-get install usbmount 
+
+# ncmpcpp - 'gui' for mpd
+make sure also alsa mixer is installed
+change directory for music folder (source)
