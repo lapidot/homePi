@@ -204,5 +204,17 @@ change directory for music folder (source)
 mpc update
 mpc list artist
 
+create a playlist (using Add) and play it
+mpc add 'Pet Shop Boys'
+mpc play
+
 mount -t auto /dev/sdb1 /media/pendrv
 
+# check ouput device in Alsa mixer
+ in my case the default was HDMI (0)
+ I changed to Headphones (1)
+defaults.ctl.card 1
+defaults.pcm.card 1
+defaults.pcm.device 1
+
+ sudo nano /usr/share/alsa/alsa.conf
