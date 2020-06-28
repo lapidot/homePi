@@ -197,3 +197,9 @@ sudo apt-get install usbmount
 # ncmpcpp - 'gui' for mpd
 make sure also alsa mixer is installed
 change directory for music folder (source)
+
+    ~ sudo apt-get install -y mpd mpc alsa-utils
+    ~  sudo chmod -R 775 /home/pi/music
+    ~  sudo chown -R mpd:audio /home/pi/music
+mpc update
+mpc list artist
