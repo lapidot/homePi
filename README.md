@@ -203,6 +203,7 @@ change directory for music folder (source)
     ~  sudo chown -R mpd:audio /home/pi/music
 mpc update
 mpc list artist
+sudo systemctl restart  mpd
 
 create a playlist (using Add) and play it
 mpc add 'Pet Shop Boys'
