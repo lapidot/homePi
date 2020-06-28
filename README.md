@@ -203,3 +203,6 @@ change directory for music folder (source)
     ~  sudo chown -R mpd:audio /home/pi/music
 mpc update
 mpc list artist
+
+mount -t auto /dev/sdb1 /media/pendrv
+
