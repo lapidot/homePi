@@ -210,6 +210,13 @@ mpc add 'Pet Shop Boys'
 mpc play
 
 mount -t auto /dev/sdb1 /media/pendrv
+# mount automatically:
+add line to file:
+sudo nano /etc/fstab
+UUID=06FF-5262 /media/musicUSB vfat defaults,auto,users,rw,nofail ,x-systemd.device-timeout=30 0 0
+
+
+
 
 # check ouput device in Alsa mixer
  in my case the default was HDMI (0)
@@ -219,3 +226,6 @@ defaults.pcm.card 1
 defaults.pcm.device 1
 
  sudo nano /usr/share/alsa/alsa.conf
+ 
+ 
+ 
