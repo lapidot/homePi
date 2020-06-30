@@ -242,6 +242,13 @@ defaults.pcm.device 1
  
  mpd
  mpc
+ 
+ 
+ sudo apt-get install mpd mpc ncmpcpp
+ sudo apt-get install alsa-util
+ 
+ 
+ 
  alsa-util
  
  
