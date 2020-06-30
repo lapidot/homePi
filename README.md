@@ -211,9 +211,30 @@ mpc play
 
 mount -t auto /dev/sdb1 /media/pendrv
 # mount automatically:
-add line to file:
+https://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/
+
+1. find UUID of drive
+ls -l /dev/disk/by-label/
+ls -l /dev/disk/by-uuid/
+
+2. create mounting point (folder)
+sudo mkdir /media/usbMusic
+sudo chown -R pi:pi /media/usbMusic/
+
+3. Manual mount
+sudo mount /dev/sda1 /media/usbMusic/ -o uid=pi,gid=pi
+
+4. Auto Mount
+add this line to file (change the folder and the UUID, and if needed - the filesystem)
 sudo nano /etc/fstab
-UUID=06FF-5262 /media/musicUSB vfat defaults,auto,users,rw,nofail ,x-systemd.device-timeout=30 0 0
+
+UUID=06FF-5262 /media/usbMusic vfat auto,nofail,noatime,users,rw,uid=pi,gid=pi 0
+
+
+///
+///add line to file:
+///sudo nano /etc/fstab
+///UUID=06FF-5262 /media/musicUSB vfat defaults,auto,users,rw,nofail ,x-systemd.device-timeout=30 0 0
 
 
 
