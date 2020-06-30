@@ -231,6 +231,13 @@ defaults.pcm.device 1
  
  # restarting from scratch
  ssh
+ 
+  Enter sudo raspi-config in a terminal window.
+  Select Interfacing Options.
+  Navigate to and select SSH.
+  Choose Yes.
+ 
+ 
  sftp
  
  mpd
