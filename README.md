@@ -229,3 +229,12 @@ defaults.pcm.device 1
  
  
  
+ # restarting from scratch
+ ssh
+ sftp
+ 
+ mpd
+ mpc
+ alsa-util
+ 
+ 
