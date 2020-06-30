@@ -273,3 +273,29 @@ defaults.pcm.device 1
  alsa-util
  
  
+https://www.musicpd.org/doc/html/plugins.html#output-plugins
+mixer_control NAME 	Choose a mixer control, defaulting to PCM. Type amixer scontrols to get a list of available mixer controls.
+
+amixer scontrols
+
+
+# how to fill the Alsa audio output hw:0,0 thing with your own settings:
+JohnT's answer gives a good basic. I'll follow it up with how to find the devices on your system. Use "aplay -l" to get a list of the devices on your system. The hw:X,Y comes from this mapping of your hardware -- in this case, X is the card number, while Y is the device number.
+
+from:
+https://superuser.com/questions/53957/what-do-alsa-devices-like-hw0-0-mean-how-do-i-figure-out-which-to-use
+
+in my case:
+
+# An example of an ALSA output:
+#
+audio_output {
+        type            "alsa"
+        name            "My ALSA Device"
+        device          "hw:Headphones,0"       # optional
+#       mixer_type      "hardware"      # optional
+#       mixer_device    "default"       # optional
+        mixer_control   "Headphone"
+#"PCM"          # optional
+        mixer_index     "0"             # optional
+}
