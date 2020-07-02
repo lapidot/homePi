@@ -336,3 +336,13 @@ the first is just to make sure it's working.
 N.B.
 /etc/crontab has a different format than other cron files (there are way to many of those and they vary between distros)
 it has a USER field (I used user pi in above lines)
+
+
+
+//Check cron status (will show erros - use to debug)
+sudo service cron status
+// Add a cron to current user
+crontab -e
+
+// Edit playlist with text editor (that's the default mpd directory)
+sudo nano /var/lib/mpd/playlists/bjork.m3u
