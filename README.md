@@ -305,4 +305,14 @@ audio_output {
 
 # allow non root user to shutdown
 https://unix.stackexchange.com/questions/109637/command-to-reboot-as-non-root-user
-you can add your user to /etc/shutdown.allow and then run shutdown -a but that one does not work for Debian.
+
+
+edit /etc.sudoers and add these lines (assuming your user name is martin):
+
+martin ALL=NOPASSWD:/usr/sbin/pm-suspend
+martin ALL=NOPASSWD:/sbin/reboot
+martin ALL=NOPASSWD:/sbin/shutdown
+
+
+/////
+NOT RELEVANT TO DEBIAN: you can add your user to /etc/shutdown.allow and then run shutdown -a but that one does not work for Debian.
