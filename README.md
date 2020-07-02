@@ -314,5 +314,25 @@ martin ALL=NOPASSWD:/sbin/reboot
 martin ALL=NOPASSWD:/sbin/shutdown
 
 
+
+
+
+
 /////
 NOT RELEVANT TO DEBIAN: you can add your user to /etc/shutdown.allow and then run shutdown -a but that one does not work for Debian.
+
+
+
+# run on strartup (without requiring login)
+in file /etc/crontab
+(sudo nano /etc/crontab)
+add these lines:
+
+@reboot pi touch crontouchfile.log
+@reboot pi /usr/bin/python3 /home/pi/serialReader/arduinoReader.py
+
+
+the first is just to make sure it's working.
+N.B.
+/etc/crontab has a different format than other cron files (there are way to many of those and they vary between distros)
+it has a USER field (I used user pi in above lines)
