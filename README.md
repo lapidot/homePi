@@ -299,3 +299,10 @@ audio_output {
 #"PCM"          # optional
         mixer_index     "0"             # optional
 }
+
+
+
+
+# allow non root user to shutdown
+https://unix.stackexchange.com/questions/109637/command-to-reboot-as-non-root-user
+you can add your user to /etc/shutdown.allow and then run shutdown -a but that one does not work for Debian.
