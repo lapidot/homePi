@@ -252,6 +252,9 @@ defaults.pcm.device 1
  
  # restarting from scratch
  ssh
+ (can be done from the sd card after download and before installation.
+ Pi inital setup looks for a file named SSH in the BOOT partition/directory.
+ just put an empty file there - 'touch ssh' if you're using linux terminal. SSH will be installed automatically for a completely headless setup)
  
   Enter sudo raspi-config in a terminal window.
   Select Interfacing Options.
@@ -278,15 +281,21 @@ mixer_control NAME 	Choose a mixer control, defaulting to PCM. Type amixer scont
 
 amixer scontrols
 
+output:
+Simple mixer control 'Headphone',0
+
 
 # how to fill the Alsa audio output hw:0,0 thing with your own settings:
+This was by far the most annoying part of the project - to get MPD to output from the headphone jack. AlsaMixer/MPD aren't documneted in a way that helps you understand exactly what should be in the Audio_Output definitions.
+I hope my example is good enough, but sadly it's not generalised for any system - just showing what worked for me.
+
 JohnT's answer gives a good basic. I'll follow it up with how to find the devices on your system. Use "aplay -l" to get a list of the devices on your system. The hw:X,Y comes from this mapping of your hardware -- in this case, X is the card number, while Y is the device number.
 
 from:
 https://superuser.com/questions/53957/what-do-alsa-devices-like-hw0-0-mean-how-do-i-figure-out-which-to-use
 
 in my case:
-
+sudo nano /etc/mpd.conf
 # An example of an ALSA output:
 #
 audio_output {
