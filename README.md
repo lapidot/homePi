@@ -309,6 +309,24 @@ audio_output {
         mixer_index     "0"             # optional
 }
 
+# mount usb drive
+1. create folder to mount to
+sudo mkdir /media/usbMusic
+
+2. list devices to find out which to mount
+fdisk -l
+in my case the usb is /dev/sda1
+
+3. so manual mount by running:
+
+sudo mount /dev/sda1 /media/usbMusic/ -o uid=pi,gid=pi
+
+
+4. Auto Mount
+add this line to file (change the folder and the UUID, and if needed - the filesystem)
+sudo nano /etc/fstab
+
+UUID=06FF-5262 /media/usbMusic vfat auto,nofail,noatime,users,rw,uid=pi,gid=pi 0
 
 
 
