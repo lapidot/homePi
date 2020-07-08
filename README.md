@@ -373,3 +373,8 @@ crontab -e
 
 // Edit playlist with text editor (that's the default mpd directory)
 sudo nano /var/lib/mpd/playlists/bjork.m3u
+
+
+
+# interrupt based keypad for pi
+https://github.com/brettmclean/pad4pi
