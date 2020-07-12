@@ -367,8 +367,7 @@ it has a USER field (I used user pi in above lines)
 
 
 //Check cron status (will show erros - use to debug)
-sudo service cron status
-// Add a cron to current user
+  // Add a cron to current user
 crontab -e
 
 // Edit playlist with text editor (that's the default mpd directory)
